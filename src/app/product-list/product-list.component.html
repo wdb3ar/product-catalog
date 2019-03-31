@@ -1,20 +1,20 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Название</th>
-      <th scope="col">Цена</th>
-      <th scope="col">Срок годности</th>
-      <th scope="col">Категория</th>
+      <th>ID</th>
+      <th>Название</th>
+      <th>Цена</th>
+      <th>Срок годности</th>
+      <th>Категория</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-      <td>@mdo</td>
+    <tr *ngFor="let product of products">
+      <th>{{ product.id }}</th>
+      <td>{{ product.name }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.shelfLife }}</td>
+      <td>{{ product.categoryId }}</td>
     </tr>
   </tbody>
 </table>

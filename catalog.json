@@ -1,0 +1,21 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "name": "Категория 1"
+        },
+        {
+            "id": 2,
+            "name": "Категория 2"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Товар 1",
+            "price": 100,
+            "shelfLife": "2019-12-11",
+            "categoryId": 1
+        }
+    ]
+}

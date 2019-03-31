@@ -1,3 +1,15 @@
-<p>
-  category-list works!
-</p>
+<table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Название</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of categories">
+        <th>{{ category.id }}</th>
+        <td>{{ category.name }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <app-form-modal></app-form-modal>

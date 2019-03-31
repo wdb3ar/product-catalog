@@ -12,7 +12,7 @@ export class FormModalComponent {
 
   constructor(private modalService: NgbModal) {}
 
-  open(content) {
+  open(content): void {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
