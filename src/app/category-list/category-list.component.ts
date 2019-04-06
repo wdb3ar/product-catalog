@@ -12,7 +12,7 @@ import { FormModalCategoryComponent } from '../form-modal-category/form-modal-ca
 export class CategoryListComponent implements OnInit {
 
   @ViewChild(FormModalCategoryComponent) modal: FormModalCategoryComponent;
-  
+
   categories: Category[] = [];
 
   constructor(private catalogService: CatalogService) { }
@@ -34,9 +34,11 @@ export class CategoryListComponent implements OnInit {
   onClickRemoveBtn(category: Category): void {
     if (confirm(`Вы действительно хотите удалить "${category.name}"?`)) {
       this.catalogService.removeCategory(category.id).subscribe(result => {
-        const index = this.categories.findIndex(item => item.id === category.id);
-        if (index > -1) {
-          this.categories.splice(index, 1);
+        if (result) {
+          const index = this.categories.findIndex(item => item.id === category.id);
+          if (index > -1) {
+            this.categories.splice(index, 1);
+          }
         }
       });
     }

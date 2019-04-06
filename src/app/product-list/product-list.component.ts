@@ -58,9 +58,11 @@ export class ProductListComponent implements OnInit {
   onClickRemoveBtn(product: Product) {
     if (confirm(`Вы действительно хотите удалить "${product.name}"?`)) {
       this.catalogService.removeProduct(product.id).subscribe(result => {
-        const index = this.products.findIndex(item => item.id === product.id);
-        if (index > -1) {
-          this.products.splice(index, 1);
+        if (result) {
+          const index = this.products.findIndex(item => item.id === product.id);
+          if (index > -1) {
+            this.products.splice(index, 1);
+          }
         }
       });
     }
