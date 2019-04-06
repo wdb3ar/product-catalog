@@ -1,21 +1,47 @@
 {
-    "categories": [
-        {
-            "id": 1,
-            "name": "Категория 1"
-        },
-        {
-            "id": 2,
-            "name": "Категория 2"
-        }
-    ],
-    "products": [
-        {
-            "id": 1,
-            "name": "Товар 1",
-            "price": 100,
-            "shelfLife": "2019-12-11",
-            "categoryId": 1
-        }
-    ]
+  "categories": [
+    {
+      "name": "Овощи",
+      "id": 1
+    },
+    {
+      "name": "Фрукты",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Апельсины",
+      "price": 100,
+      "shelfLife": {
+        "year": 2019,
+        "month": 4,
+        "day": 17
+      },
+      "categoryId": 2
+    },
+    {
+      "id": 2,
+      "name": "Яблоки",
+      "price": 120,
+      "shelfLife": {
+        "year": 2019,
+        "month": 5,
+        "day": 3
+      },
+      "categoryId": 2
+    },
+    {
+      "id": 3,
+      "name": "Помидоры",
+      "price": 60,
+      "shelfLife": {
+        "year": 2019,
+        "month": 4,
+        "day": 15
+      },
+      "categoryId": 1
+    }
+  ]
 }

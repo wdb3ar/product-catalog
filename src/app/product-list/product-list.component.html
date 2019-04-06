@@ -1,3 +1,5 @@
+<app-form-modal-product #modal [categories]="categories" (onAdded)="addProduct($event)"
+  (onUpdated)="updateProduct($event)"></app-form-modal-product>
 <table class="table">
   <thead>
     <tr>
@@ -6,6 +8,7 @@
       <th>Цена</th>
       <th>Срок годности</th>
       <th>Категория</th>
+      <th>Действия</th>
     </tr>
   </thead>
   <tbody>
@@ -13,9 +16,16 @@
       <th>{{ product.id }}</th>
       <td>{{ product.name }}</td>
       <td>{{ product.price }}</td>
-      <td>{{ product.shelfLife }}</td>
-      <td>{{ product.categoryId }}</td>
+      <td>{{ getDateSting(product.shelfLife) }}</td>
+      <td>{{ getCategoryNameById(product.categoryId) }}</td>
+      <td>
+        <button (click)="onClickEditBtn(product)" type="button" class="btn" title="Редактировать">
+          <fa-icon icon="edit"></fa-icon>
+        </button>
+        <button (click)="onClickRemoveBtn(product)" type="button" class="btn" title="Удалить">
+          <fa-icon icon="trash-alt"></fa-icon>
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>
-<app-form-modal></app-form-modal>
